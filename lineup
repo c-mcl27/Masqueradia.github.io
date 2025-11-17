@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Festival Artists</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f0f5;
+    }
+
+    header {
+      background: #0d0d0d;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 32px;
+      letter-spacing: 1px;
+    }
+
+    .search-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    #searchInput {
+      width: 70%;
+      max-width: 450px;
+      padding: 12px 15px;
+      font-size: 16px;
+      border-radius: 12px;
+      border: 1px solid #aaa;
+    }
+
+    .artist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      padding: 25px;
+    }
+
+    .artist-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .artist-card:hover {
+      transform: scale(1.05);
+    }
+
+    .artist-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .artist-name {
+      padding: 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>Festival Artists</header>
+
+  <div class="search-container">
+    <input 
+      type="text" 
+      id="searchInput" 
+      placeholder="Search for an artist..."
+      onkeyup="searchArtists()"
+    />
+  </div>
+
+  <div class="artist-grid" id="artistGrid">
+
+    <!-- SAMPLE ARTISTS (YOU CAN EDIT THESE) -->
+    <div class="artist-card">
+      <img src="https://i.imgur.com/5cN6Z5R.jpeg" alt="Artist A">
+      <div class="artist-name">Artist A</div>
+    </div>
+
+    <div class="artist-card">
+      <img src="https://i.imgur.com/TP2ZgPk.jpeg" alt="Artist B">
+      <div class="artist-name">Artist B</div>
+    </div>
+
+    <div class="artist-card">
+      <img src="https://i.imgur.com/gfQOZnk.jpeg" alt="DJ Galaxy">
+      <div class="artist-name">DJ Galaxy</div>
+    </div>
+
+    <div class="artist-card">
+      <img src="https://i.imgur.com/ZEH72XM.jpeg" alt="Synth Queen">
+      <div class="artist-name">Synth Queen</div>
+    </div>
+
+  </div>
+
+  <script>
+    function searchArtists() {
+      let input = document.getElementById("searchInput").value.toLowerCase();
+      let cards = document.getElementsByClassName("artist-card");
+
+      for (let i = 0; i < cards.length; i++) {
+        let name = cards[i].querySelector(".artist-name").innerText.toLowerCase();
+        
+        if (name.includes(input)) {
+          cards[i].style.display = "block";
+        } else {
+          cards[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
