@@ -1,0 +1,112 @@
+body{
+    
+    background: linear-gradient(135deg, #271f0e, #82660a, #a68f0b);
+    background-blend-mode: screen;
+    background-repeat: repeat;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+
+}
+
+.Festival_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #291583;
+    color: white;
+    padding: 20px 40px;
+    flex-wrap: wrap;
+
+}
+
+.Links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.Links a {
+    color: white;
+    font-weight: bold;
+}
+
+.Links a:hover {
+    color: #e94560;
+}
+
+.Top {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-radius: 5px;
+    padding: 5px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5px;
+
+}
+
+.Mask_1 {
+    transform: rotate(300deg);
+    margin-top: 10px;
+}
+
+.Mask_2 {
+    transform: rotate(55deg);
+    margin-top: 10px;
+}
+
+.Title {
+    color: white;
+    text-align: center;
+    font-size: 15px;
+
+}
+
+.map {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 30px;
+    border: 5px solid #291583; 
+    border-radius: 10px;       
+    overflow: hidden; 
+
+}
+
+.map iframe {
+        width: 100%;
+        height: 100%;
+        border: none;.map {
+        border: 5px solid #291583; 
+        border-radius: 10px;      
+        overflow: hidden;          
+        width: 100%;
+        height: 400px;
+    }
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}
+
+
+.Information-boxes {
+    text-align: center;
+}
+
+.Info {
+    background-color: #291583c0;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: inline-block;
+    float: left;
+    width: 20%;
+    margin-right:65px;
+    margin-left: 65px;
+}
