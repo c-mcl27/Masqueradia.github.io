@@ -6,35 +6,49 @@
   <title>Masqueradia Lineup</title>
 
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f0f0f5;
-    }
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0d0d0d, #1e003f, #0077ff, #00c3ff);
+    margin: 0;
+    color: white;
+    position: relative;
+
 
     header {
-      background: #0d0d0d;
-      color: white;
-      padding: 20px;
+      background: transparent;
+      color: #8b0000; 
+      padding: 25px;
       text-align: center;
-      font-size: 32px;
-      letter-spacing: 1px;
+      font-size: 40px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    }
+
+    .title-bar {
+      width: 100%;
+      height: 6px;
+      background: black;
+      margin-bottom: 20px;
     }
 
     .search-container {
       width: 100%;
       display: flex;
-      justify-content: center;
-      margin: 20px 0;
+      justify-content: flex-end;
+      padding-right: 35px;
+      margin-bottom: 15px;
     }
 
     #searchInput {
-      width: 70%;
-      max-width: 450px;
-      padding: 12px 15px;
-      font-size: 16px;
-      border-radius: 12px;
-      border: 1px solid #aaa;
+      width: 180px;
+      padding: 8px 12px;
+      font-size: 14px;
+      border-radius: 10px;
+      border: 1px solid #333;
+      background: black;
+      color: white;
+      outline: none;
     }
 
     .artist-grid {
@@ -45,13 +59,14 @@
     }
 
     .artist-card {
-      background: white;
+      background: rgba(255,255,255,0.15);
       border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       transition: transform 0.2s ease;
       cursor: pointer;
       text-align: center;
+      backdrop-filter: blur(4px);
     }
 
     .artist-card:hover {
@@ -59,54 +74,231 @@
     }
 
     .artist-card img {
-      width: 100%;
-      height: 200px;
+      width: 150px;
+      height: 150px;
       object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid white;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.4);
     }
 
     .artist-name {
-      padding: 15px;
+      margin-top: 15px;
       font-size: 18px;
       font-weight: bold;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
     }
+	
+	Style.css
+	.festival-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #291583;
+  color: white;
+  padding: 20px 40px;
+  flex-wrap: wrap;
+}
+
+.logo-date h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #e95460;
+}
+
+.logo-date p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: #e94560;
+}
+
+.ticket-btn {
+  background-color: #e94560;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.ticket-btn:hover {
+  background-color: #ff5e78;
+}
+
+
+	
   </style>
 </head>
 
 <body>
 
-  <header>Masqueradia Lineup</header>
+  <header class="festival-header">
+    <div class="logo-date">
+      <h1>MASQUERADIA</h1>
+      <p>JUN 19,20 & 21 2026</p>
+    </div>
+
+    <nav class="nav-links">
+      <a href="#about">ABOUT</a>
+      <a href="#lineup">LINEUP</a>
+      <a href="#plan">LOCATION</a>
+      <button class="tickets-btn">TICKETS</button>
+    </nav>
+  </header>
+
+  <div class="title-bar"></div>
 
   <div class="search-container">
     <input 
       type="text" 
       id="searchInput" 
-      placeholder="Search for an artist..."
+      placeholder="Search..."
       onkeyup="searchArtists()"
     />
   </div>
 
   <div class="artist-grid" id="artistGrid">
 
-    <!-- SAMPLE ARTISTS (YOU CAN EDIT THESE) -->
     <div class="artist-card">
-      <img src="https://i.imgur.com/5cN6Z5R.jpeg" alt="Diva Addy ft. S Muhammad Ali">
+      <img src="addy.png" alt="Diva Addy ft. S Muhammad Ali">
       <div class="artist-name">Diva Addy ft. S Muhammad Ali</div>
     </div>
 
     <div class="artist-card">
-      <img src="https://i.imgur.com/TP2ZgPk.jpeg" alt="Ariana Grenade">
+      <img src="arianaGrenade.jpg" alt="Ariana Grenade">
       <div class="artist-name">Ariana Grenade</div>
     </div>
 
     <div class="artist-card">
-      <img src="https://i.imgur.com/gfQOZnk.jpeg" alt="Poot">
+      <img src="pootLovato.jpg" alt="Poot">
       <div class="artist-name">Poot</div>
     </div>
 
     <div class="artist-card">
-      <img src="https://i.imgur.com/ZEH72XM.jpeg" alt="Malley and the 67s ft. Diva Addy">
+      <img src="jack.png" alt="Malley and the 67s ft. Diva Addy">
       <div class="artist-name">Malley and the 67s ft. Diva Addy</div>
     </div>
+	
+    <div class="artist-card">
+      <img src="eminem.jpg" alt="M&M">
+      <div class="artist-name">M&M</div>
+    </div>
+	
+    <div class="artist-card">
+      <img src="helloDubai.jpg" alt="Rihanna">
+      <div class="artist-name">Rihanna</div>
+    </div>
+	
+    <div class="artist-card">
+      <img src="nina.jpg" alt="Nina The Fish Girl">
+      <div class="artist-name">Nina The Fish Girl</div>
+    </div>
+
+    <div class="artist-card">
+      <img src="travisScoot.jpg" alt="Travis Scoot">
+      <div class="artist-name">Travis Scoot</div>
+    </div>
+	
+    <div class="artist-card">
+      <img src="abbyJojo.jpg" alt="Abby Lee Miller ft. Jojo Siwa">
+      <div class="artist-name">Abby Lee Miller ft. Jojo Siwa</div>
+    </div>
+	
+    <div class="artist-card">
+      <img src="coldplay.jpg" alt="Coldplay">
+      <div class="artist-name">Coldplay</div>
+    </div>
+	
+    <div class="artist-card">
+      <img src="johnnysBrothers.jpg" alt="Johnnys Brothers">
+      <div class="artist-name">Johnnys Brothers</div>
+    </div>
+	
+    <div class="artist-card">
+      <img src="ladyGaga.jpg" alt="Lady Gaga">
+      <div class="artist-name">Lady Gaga</div>
+    </div>
+	
+    <div class="artist-card">
+      <img src="onikaBurgers.jpg" alt="Onika Burgers">
+      <div class="artist-name">Onika Burgers</div>
+    </div>
+	
+    <div class="artist-card">
+      <img src="katseye.jpg" alt="Katseye">
+      <div class="artist-name">Katseye</div>
+    </div>
+
+    <div class="artist-card">
+      <img src="trishaPaytas.jpg" alt="Trisha Paytas">
+      <div class="artist-name">Trisha Paytas</div>
+    </div>
+
+    <div class="artist-card">
+      <img src="kingKylie.jpg" alt="King Kylie">
+      <div class="artist-name">King Kylie</div>
+    </div>
+
+    <div class="artist-card">
+      <img src="kanyeWest.jpg" alt="Kanye West">
+      <div class="artist-name">Kanye West before Lobotomy</div>
+    </div>
+
+    <div class="artist-card">
+      <img src="krissed.jpg" alt="Get Krissed">
+      <div class="artist-name">Get Krissed</div>
+    </div>
+
+    <div class="artist-card">
+      <img src="rattailTedros.jpg" alt="Rattail Tedros">
+      <div class="artist-name">Rattail Tedros</div>
+    </div>
+
+    <div class="artist-card">
+      <img src="nateJacobs.jpg" alt="Nate Jacobs">
+      <div class="artist-name">Nate Jacobs</div>
+    </div>
+
+    <div class="artist-card">
+      <img src="einsteins.png" alt="Einstein & Einstein Jr">
+      <div class="artist-name">Einstein & Einstein Jr</div>
+    </div>
+
+    <div class="artist-card">
+      <img src="stevenHawking.jpg" alt="Steven Hawking">
+      <div class="artist-name">Steven Hawking</div>
+    </div>
+
+    <div class="artist-card">
+      <img src="honeyG.jpg" alt="Honey G">
+      <div class="artist-name">Honey G</div>
+    </div>
+	
+	<div class="artist-card">
+      <img src="michael.jpg" alt="Michael Jackson">
+      <div class="artist-name">Michael Jackson</div>
+    </div>
+	
+	
 
   </div>
 
@@ -117,12 +309,7 @@
 
       for (let i = 0; i < cards.length; i++) {
         let name = cards[i].querySelector(".artist-name").innerText.toLowerCase();
-        
-        if (name.includes(input)) {
-          cards[i].style.display = "block";
-        } else {
-          cards[i].style.display = "none";
-        }
+        cards[i].style.display = name.includes(input) ? "block" : "none";
       }
     }
   </script>
