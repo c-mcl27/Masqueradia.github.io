@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Masquerade Festival Tickets</title>
+  <link rel="stylesheet" href="Tickets_style.css" />
+</head>
+<body>
+  <header class="festival-header">
+    <div class="logo-date">
+      <h1>MASQUERADIA</h1>
+      <p>JUN 19,20 & 21 2026</p>
+    </div>
+
+    <nav class="nav-links">
+      <a href="#about">ABOUT</a>
+      <a href="lineup">LINEUP</a>
+      <a href="location.html">LOCATION</a>
+      <a href="tickets.html" class="cta-button">TICKETS</a>
+    </nav>
+  </header>
+
+  <header class="ticket-hero">
+    <div>
+    <h1>🎭 Claim Your Masked Entry</h1>
+    <p>Step into the mystery — reserve your place behind the mask.</p>
+    <a href="#tickets" class="cta-button">Choose Your Ticket</a>
+  </div>
+  </header>
+  
+
+  <section id="tickets">
+  <h2> Ticket Tiers</h2>
+  <div class="ticket-container">
+      <div class="ticket-option" data-ticket="Standard 1 Day" data-price="80">
+        <h3>Standard 1 Day</h3>
+        <p class="price">€80</p>
+        <ul>
+          <li>General entry</li>
+          <li>Wristband: <span class="wristband navy">Navy</span></li>
+        </ul>
+        <button type="button" class="cta-button">Select</button>
+      </div>
+
+    <div class="ticket-option" data-ticket="Standard Weekend" data-price="200">
+      <h3>Standard Weekend</h3>
+      <p class="price">€200</p>
+      <ul>
+        <li>Entry + Food</li>
+        <li>Mask kit included</li>
+        <li>Wristband: <span class="wristband red">Red</span></li>
+      </ul>
+      <button type="button" class="cta-button">Select</button> 
+    </div>
+
+    <div class="ticket-option" data-ticket="VIP" data-price="350">
+      <h3>VIP</h3>
+      <p class="price">€350</p>
+      <ul>
+        <li>All perks included</li>
+        <li>Backstage lounge access</li>
+        <li>Gift bag</li>
+        <li>Wristbands: 
+          <span class="wristband gold">Gold</span>, 
+          <span class="wristband silver">Silver</span>
+        </li>
+      </ul>
+      <button type="button" class="cta-button">Select</button>
+    </div>
+  </div>
+</section>
+
+
+  <section id="booking">
+    <h2>Book Your Ticket</h2>
+    <form id="bookingForm" novalidate>
+      <label for="name">Name:</label>
+      <input id="name" name="name" type="text" required />
+
+      <label for="email">Email:</label>
+      <input id="email" name="email" type="email" required />
+
+      <label for="date">Select Date: </label>
+      <select id="date" name="date" required>
+        <option value="" disabled selected>Select a date</option>
+        <option value="2026-06-19">June 19, 2026</option>
+        <option value="2026-06-20">June 20, 2026</option>
+        <option value="2026-06-21">June 21, 2026</option>
+      </select>
+
+      <label for="quantity">Quantity:</label>
+      <input id="quantity" name="quantity" type="number" min="1" max="10"/>
+
+
+      <input id="ticketType" name="ticketType" type="hidden" />
+
+      <label for="terms" class="terms-label">
+        <input id="terms" name="terms" type="checkbox" required />
+        I agree to the <a href="terms.html">Terms & Conditions</a>
+      </label>
+
+      <button type="submit">Confirm Booking</button> 
+      <div id="confirmed" class="confirmation">
+       Thank you! Your booking has been received.
+       </div>
+    </form>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const selectButtons = document.querySelectorAll('.ticket-option button');
+      const ticketTypeInput = document.getElementById('ticketType');
+      const bookingForm = document.getElementById('bookingForm');
+
+      selectButtons.forEach(btn => {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          const card = this.closest('.ticket-option');
+          const ticketName = card && card.dataset.ticket ? card.dataset.ticket : '';
+          ticketTypeInput.value = ticketName;
+
+          document.querySelectorAll('.ticket-option').forEach(c => c.classList.remove('selected'));
+          if (card) card.classList.add('selected');
+
+          const booking = document.getElementById('booking');
+          if (booking) booking.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          const nameInput = document.getElementById('name');
+          if (nameInput) nameInput.focus();
+        });
+      });
+
+      if (bookingForm) {
+        bookingForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          if (!bookingForm.reportValidity()) return;
+
+          const formData = new FormData(bookingForm);
+          const summary = `Booking summary:\nTicket: ${formData.get('ticketType') || 'None selected'}\nName: ${formData.get('name')}\nEmail: ${formData.get('email')}\nQuantity: ${formData.get('quantity')}`;
+
+          alert(summary + '\n\nThis is a demo — no data was sent.');
+
+          bookingForm.reset();
+          ticketTypeInput.value = '';
+          document.querySelectorAll('.ticket-option').forEach(c => c.classList.remove('selected'));
+        });
+      }
+    });
+  </script>
+
+  <footer class="site-footer">
+  <div class="footer-links">
+    <a>Your Privacy Choices</a>
+    <a>Privacy Policy</a>
+    <a>Manage Cookies</a>
+    <a>Festival Ticket Terms</a>
+    <a>Partners</a>
+    <a>Accessibility</a>
+    <a>Contact</a>
+    <a>Health & Safety</a>
+  </div>
+</footer>
+  
+  
+</body>
+</html>
