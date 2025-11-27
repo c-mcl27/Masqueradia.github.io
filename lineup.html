@@ -8,7 +8,7 @@
   <style>
   body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #0d0d0d, #1e003f, #0077ff, #00c3ff);
+    background: linear-gradient(135deg, #0d0d0d, #1e003f, #911414, #00c3ff);
     margin: 0;
     color: white;
     position: relative;
@@ -50,6 +50,27 @@
       color: white;
       outline: none;
     }
+	
+	p {
+  font-size: 16px;
+  color: #fff;
+  text-align: center;       /* centers the text */
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+p a {
+  color: #e94560;           /* bold festival accent color */
+  font-weight: bold;
+  text-decoration: none;    /* remove underline */
+  margin-left: 6px;         /* add space before "here!" */
+  transition: color 0.3s ease;
+}
+
+p a:hover {
+  color: #ffcc00;           /* fun hover effect */
+  text-decoration: underline;
+}
 
     .artist-grid {
       display: grid;
@@ -100,8 +121,25 @@
   flex-wrap: wrap;
 }
 
+.logo-date {
+  text-align: left;
+}
+
+.logo-date h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #e94560;
+}
+
+.logo-date p {
+  margin: 5px 0 0;
+  font-size: 16px;
+  color: #ccc;
+}
+
 .nav-section {
-  flex: 1;
+  display: flex;
+  align-items: center;
 }
 
 .nav-links {
@@ -114,12 +152,29 @@
   color: white;
   text-decoration: none;
   font-weight: bold;
+  font-size: 14px; /* smaller size */
+  padding: 4px 8px;
 }
 
 .nav-links a:hover {
   color: #e94560;
 }
 
+.tickets-btn {
+  background-color: #e94560;
+  color: white;
+  border: none;
+  padding: 6px 14px; /* slightly smaller padding */
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px; /* match link size */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.tickets-btn:hover {
+  background-color: #ff5e78;
+}
 
 .logo-date {
   text-align: ;
@@ -136,27 +191,17 @@
   font-size: 16px;
   color: #ccc;
 }
-  
-
-.ticket-btn {
-  background-color: #e94560;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.ticket-btn:hover {
-  background-color: #e94560;
-}
 	
   </style>
 </head>
 
 <body>
   <header class="festival-header">
+  <div class="logo-date">
+    <h1>MASQUERADIA</h1>
+    <p>JUN 19, 20 & 21 2026</p>
+  </div>
+
   <div class="nav-section">
     <nav class="nav-links">
       <a href="#about">ABOUT</a>
@@ -164,11 +209,6 @@
       <a href="#plan">LOCATION</a>
       <button class="tickets-btn">TICKETS</button>
     </nav>
-  </div>
-
-  <div class="logo-date">
-    <h1>MASQUERADIA</h1>
-    <p>JUN 19, 20 & 21 2026</p>
   </div>
 </header>
 
@@ -181,130 +221,218 @@
       onkeyup="searchArtists()"
     />
   </div>
+  
+  <p>You can check out the locations of the stages<a href="location.com" target="_blank">here!</a></p>
 
   <div class="artist-grid" id="artistGrid">
 
-    <div class="artist-card">
-      <img src="addy.png" alt="Diva Addy ft. S Muhammad Ali">
-      <div class="artist-name">Diva Addy ft. S Muhammad Ali</div>
+  <div class="artist-card">
+    <img src="addy.png" alt="Diva Addy ft. S Muhammad Ali">
+    <div class="artist-name">Diva Addy ft. S Muhammad Ali</div>
+    <div class="artist-info">
+      <p>Stage: The East Room Green</p>
+      <p>Time: Friday, 8:00-9:30 PM</p>
     </div>
-
-    <div class="artist-card">
-      <img src="arianaGrenade.jpg" alt="Ariana Grenade">
-      <div class="artist-name">Ariana Grenade</div>
-    </div>
-
-    <div class="artist-card">
-      <img src="pootLovato.jpg" alt="Poot">
-      <div class="artist-name">Poot</div>
-    </div>
-
-    <div class="artist-card">
-      <img src="jack.png" alt="Malley and the 67s ft. Diva Addy">
-      <div class="artist-name">Malley and the 67s ft. Diva Addy</div>
-    </div>
-	
-    <div class="artist-card">
-      <img src="eminem.jpg" alt="M&M">
-      <div class="artist-name">M&M</div>
-    </div>
-	
-    <div class="artist-card">
-      <img src="helloDubai.jpg" alt="Rihanna">
-      <div class="artist-name">Rihanna</div>
-    </div>
-	
-    <div class="artist-card">
-      <img src="nina.jpg" alt="Nina The Fish Girl">
-      <div class="artist-name">Nina The Fish Girl</div>
-    </div>
-
-    <div class="artist-card">
-      <img src="travisScoot.jpg" alt="Travis Scoot">
-      <div class="artist-name">Travis Scoot</div>
-    </div>
-	
-    <div class="artist-card">
-      <img src="abbyJojo.jpg" alt="Abby Lee Miller ft. Jojo Siwa">
-      <div class="artist-name">Abby Lee Miller ft. Jojo Siwa</div>
-    </div>
-	
-    <div class="artist-card">
-      <img src="coldplay.jpg" alt="Coldplay">
-      <div class="artist-name">Coldplay</div>
-    </div>
-	
-    <div class="artist-card">
-      <img src="johnnysBrothers.jpg" alt="Johnnys Brothers">
-      <div class="artist-name">Johnnys Brothers</div>
-    </div>
-	
-    <div class="artist-card">
-      <img src="ladyGaga.jpg" alt="Lady Gaga">
-      <div class="artist-name">Lady Gaga</div>
-    </div>
-	
-    <div class="artist-card">
-      <img src="onikaBurgers.jpg" alt="Onika Burgers">
-      <div class="artist-name">Onika Burgers</div>
-    </div>
-	
-    <div class="artist-card">
-      <img src="katseye.jpg" alt="Katseye">
-      <div class="artist-name">Katseye</div>
-    </div>
-
-    <div class="artist-card">
-      <img src="trishaPaytas.jpg" alt="Trisha Paytas">
-      <div class="artist-name">Trisha Paytas</div>
-    </div>
-
-    <div class="artist-card">
-      <img src="kingKylie.jpg" alt="King Kylie">
-      <div class="artist-name">King Kylie</div>
-    </div>
-
-    <div class="artist-card">
-      <img src="kanyeWest.jpg" alt="Kanye West">
-      <div class="artist-name">Kanye West before Lobotomy</div>
-    </div>
-
-    <div class="artist-card">
-      <img src="krissed.jpg" alt="Get Krissed">
-      <div class="artist-name">Get Krissed</div>
-    </div>
-
-    <div class="artist-card">
-      <img src="rattailTedros.jpg" alt="Rattail Tedros">
-      <div class="artist-name">Rattail Tedros</div>
-    </div>
-
-    <div class="artist-card">
-      <img src="nateJacobs.jpg" alt="Nate Jacobs">
-      <div class="artist-name">Nate Jacobs</div>
-    </div>
-
-    <div class="artist-card">
-      <img src="einsteins.png" alt="Einstein & Einstein Jr">
-      <div class="artist-name">Einstein & Einstein Jr</div>
-    </div>
-
-    <div class="artist-card">
-      <img src="stevenHawking.jpg" alt="Steven Hawking">
-      <div class="artist-name">Steven Hawking</div>
-    </div>
-
-    <div class="artist-card">
-      <img src="honeyG.jpg" alt="Honey G">
-      <div class="artist-name">Honey G</div>
-    </div>
-	
-	<div class="artist-card">
-      <img src="michael.jpg" alt="Michael Jackson">
-      <div class="artist-name">Michael Jackson</div>
-    </div>
-
   </div>
+
+  <div class="artist-card">
+    <img src="arianaGrenade.jpg" alt="Ariana Grenade">
+    <div class="artist-name">Ariana Grenade</div>
+    <div class="artist-info">
+      <p>Stage: The East Room Green</p>
+      <p>Time: Friday, 9:30-10:30 PM</p>
+    </div>
+  </div>
+
+  <div class="artist-card">
+    <img src="pootLovato.jpg" alt="Poot">
+    <div class="artist-name">Poot</div>
+    <div class="artist-info">
+      <p>Stage: The East Room Green</p>
+      <p>Time: Friday, 10:00-10:30 PM</p>
+    </div>
+  </div>
+
+  <div class="artist-card">
+    <img src="jack.png" alt="Malley and the 67s ft. Diva Addy">
+    <div class="artist-name">Malley and the 67s ft. Diva Addy</div>
+    <div class="artist-info">
+      <p>Stage: The East Room Green</p>
+      <p>Time: Friday, 10:30-11:30 PM</p>
+    </div>
+  </div>
+
+  <div class="artist-card">
+    <img src="eminem.jpg" alt="M&M">
+    <div class="artist-name">M&M</div>
+    <div class="artist-info">
+      <p>Stage: The East Room Green</p>
+      <p>Time: Friday, 11:30 PM-12:00 AM</p>
+    </div>
+  </div>
+
+  <div class="artist-card">
+    <img src="helloDubai.jpg" alt="Rihanna">
+    <div class="artist-name">Rihanna</div>
+    <div class="artist-info">
+      <p>Stage: UL Concert Hall</p>
+      <p>Time: Friday, 8:00-9:30 PM</p>
+    </div>
+  </div>
+
+  <div class="artist-card">
+    <img src="nina.jpg" alt="Nina The Fish Girl">
+    <div class="artist-name">Nina The Fish Girl</div>
+    <div class="artist-info">
+      <p>Stage: UL Concert Hall</p>
+      <p>Time: Friday, 9:30-10:30 PM</p>
+    </div>
+  </div>
+
+  <div class="artist-card">
+    <img src="travisScoot.jpg" alt="Travis Scoot">
+    <div class="artist-name">Travis Scoot</div>
+    <div class="artist-info">
+      <p>Stage: The East Room Green</p>
+      <p>Time: Friday, 12:00-12:30 AM</p>
+    </div>
+  </div>
+
+  <div class="artist-card">
+    <img src="abbyJojo.jpg" alt="Abby Lee Miller ft. Jojo Siwa">
+    <div class="artist-name">Abby Lee Miller ft. Jojo Siwa</div>
+    <div class="artist-info">
+      <p>Stage: UL Concert Hall</p>
+      <p>Time: Friday, 10:30-11:00 PM</p>
+    </div>
+  </div>
+
+  <div class="artist-card">
+    <img src="coldplay.jpg" alt="Coldplay">
+    <div class="artist-name">Coldplay</div>
+    <div class="artist-info">
+      <p>Stage: The East Room Green</p>
+      <p>Time: Friday, 12:30-1:30 AM</p>
+    </div>
+  </div>
+
+  <div class="artist-card">
+    <img src="johnnysBrothers.jpg" alt="Johnnys Brothers">
+    <div class="artist-name">Johnnys Brothers</div>
+	<p>Stage: UL Concert Hall</p>
+    <p>Time: Friday, 11:00 PM-12:00 AM</p>
+  </div>
+
+  <div class="artist-card">
+    <img src="ladyGaga.jpg" alt="Lady Gaga">
+    <div class="artist-name">Lady Gaga</div>
+    <div class="artist-info">
+      <p>Stage: The East Room Green</p>
+      <p>Time: Friday, 1:30-2:00 AM</p>
+    </div>
+  </div>
+
+  <div class="artist-card">
+    <img src="onikaBurgers.jpg" alt="Onika Burgers">
+    <div class="artist-name">Onika Burgers</div>
+    <div class="artist-info">
+      <p>Stage: The East Room Green</p>
+      <p>Time: Saturday, 8:00-8:30 PM</p>
+    </div>
+  </div>
+
+  <div class="artist-card">
+    <img src="katseye.jpg" alt="Katseye">
+    <div class="artist-name">Katseye</div>
+    <div class="artist-info">
+      <p>Stage: The East Room Green</p>
+      <p>Time: Saturday, 8:30-9:30 PM</p>
+    </div>
+  </div>
+
+  <div class="artist-card">
+    <img src="trishaPaytas.jpg" alt="Trisha Paytas">
+    <div class="artist-name">Trisha Paytas</div>
+	<p>Stage: UL Concert Hall</p>
+    <p>Time: Saturday, 8:00-9:30 AM</p>
+  </div>
+
+  <div class="artist-card">
+    <img src="kingKylie.jpg" alt="King Kylie">
+    <div class="artist-name">King Kylie</div>
+    <div class="artist-info">
+      <p>Stage: The East Room Green</p>
+      <p>Time: Saturday, 9:30-10:30 PM</p>
+    </div>
+  </div>
+
+  <div class="artist-card">
+    <img src="kanyeWest.jpg" alt="Kanye West">
+    <div class="artist-name">Kanye West before Lobotomy</div>
+    <div class="artist-info">
+      <p>Stage: The East Room Green</p>
+      <p>Time: Saturday, 10:30 PM-12:00 AM</p>
+    </div>
+  </div>
+
+  <div class="artist-card">
+    <img src="krissed.jpg" alt="Get Krissed">
+    <div class="artist-name">Get Krissed</div>
+	<p>Stage: UL Concert Hall</p>
+    <p>Time: Saturday, 9:30-10:30 AM</p>
+  </div>
+
+  <div class="artist-card">
+    <img src="rattailTedros.jpg" alt="Rattail Tedros">
+    <div class="artist-name">Rattail Tedros</div>
+	<p>Stage: UL Concert Hall</p>
+    <p>Time: Saturday, 10:30 PM-12:00 AM</p>
+  </div>
+
+  <div class="artist-card">
+    <img src="nateJacobs.jpg" alt="Nate Jacobs">
+    <div class="artist-name">Nate Jacobs</div>
+    <div class="artist-info">
+      <p>Stage: The East Room Green</p>
+      <p>Time: Sunday, 8:00-8:30 PM</p>
+    </div>
+  </div>
+
+  <div class="artist-card">
+    <img src="einsteins.png" alt="Einstein & Einstein Jr">
+    <div class="artist-name">Einstein & Einstein Jr</div>
+    <div class="artist-info">
+      <p>Stage: The East Room Green</p>
+      <p>Time: Sunday, 8:30-10:30 PM</p>
+    </div>
+  </div>
+
+  <div class="artist-card">
+    <img src="stevenHawking.jpg" alt="Steven Hawking">
+    <div class="artist-name">Steven Hawking</div>
+	<p>Stage: UL Concert Hall</p>
+    <p>Time: Sunday, 8:00PM-12:00 AM</p>
+  </div>
+
+  <div class="artist-card">
+    <img src="honeyG.jpg" alt="Honey G">
+    <div class="artist-name">Honey G</div>
+    <div class="artist-info">
+      <p>Stage: The East Room Green</p>
+      <p>Time: Sunday, 10:30-11:00 PM</p>
+    </div>
+  </div>
+
+  <div class="artist-card">
+    <img src="michael.jpg" alt="Michael Jackson">
+    <div class="artist-name">Michael Jackson</div>
+    <div class="artist-info">
+      <p>Stage: The East Room Green</p>
+      <p>Time: Sunday, 11:00 PM-12:30 AM</p>
+    </div>
+  </div>
+
+</div>
 
   <script>
     function searchArtists() {
