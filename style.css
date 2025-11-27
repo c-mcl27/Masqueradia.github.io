@@ -40,21 +40,6 @@
 .nav-links a:hover {
   color: #e94560;
 }
-
-.ticket-btn {
-  background-color: #e94560;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.ticket-btn:hover {
-  background-color: #ff5e78;
-}
-
 body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #0d0d0d, #1e003f, #090f87, #366fd9);
@@ -251,4 +236,5 @@ footer{
   color: #fff;
   text-align: center;
 }
+
 
