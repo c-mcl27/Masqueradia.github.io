@@ -107,47 +107,6 @@
     </form>
   </section>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const selectButtons = document.querySelectorAll('.ticket-option button');
-      const ticketTypeInput = document.getElementById('ticketType');
-      const bookingForm = document.getElementById('bookingForm');
-
-      selectButtons.forEach(btn => {
-        btn.addEventListener('click', function (e) {
-          e.preventDefault();
-          const card = this.closest('.ticket-option');
-          const ticketName = card && card.dataset.ticket ? card.dataset.ticket : '';
-          ticketTypeInput.value = ticketName;
-
-          document.querySelectorAll('.ticket-option').forEach(c => c.classList.remove('selected'));
-          if (card) card.classList.add('selected');
-
-          const booking = document.getElementById('booking');
-          if (booking) booking.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          const nameInput = document.getElementById('name');
-          if (nameInput) nameInput.focus();
-        });
-      });
-
-      if (bookingForm) {
-        bookingForm.addEventListener('submit', function (e) {
-          e.preventDefault();
-          if (!bookingForm.reportValidity()) return;
-
-          const formData = new FormData(bookingForm);
-          const summary = `Booking summary:\nTicket: ${formData.get('ticketType') || 'None selected'}\nName: ${formData.get('name')}\nEmail: ${formData.get('email')}\nQuantity: ${formData.get('quantity')}`;
-
-          alert(summary + '\n\nThis is a demo — no data was sent.');
-
-          bookingForm.reset();
-          ticketTypeInput.value = '';
-          document.querySelectorAll('.ticket-option').forEach(c => c.classList.remove('selected'));
-        });
-      }
-    });
-  </script>
-
   <footer class="site-footer">
   <div class="footer-links">
     <a>Your Privacy Choices</a>
@@ -165,3 +124,4 @@
 </body>
 
 </html>
+
