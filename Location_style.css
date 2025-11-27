@@ -37,30 +37,8 @@ body{
     color: #e94560;
 }
 
-.Top {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    border-radius: 5px;
-    padding: 5px;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 5px;
-
-}
-
-.Mask_1 {
-    transform: rotate(300deg);
-    margin-top: 10px;
-}
-
-.Mask_2 {
-    transform: rotate(55deg);
-    margin-top: 10px;
-}
-
 .Title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
     color: white;
     text-align: center;
     font-size: 15px;
@@ -109,4 +87,5 @@ h2 {
     width: 20%;
     margin-right:65px;
     margin-left: 65px;
+
 }
