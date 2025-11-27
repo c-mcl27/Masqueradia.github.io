@@ -27,7 +27,6 @@
 </html>
 
 
-<!-- Welcome Banner -->
 <section class="welcome-banner">
     <img src="WTM.png" alt="Welcome to Masqueradia Festival" class="banner-image">
 </section>    
@@ -39,7 +38,6 @@
 
     <div class="cards">
 
-        <!-- History -->
         <div class="card">
             <h2>History</h2>
 
@@ -56,7 +54,6 @@
             <span class="read-more-btn" onclick="toggleText(this)">Read More</span>
         </div>
 
-        <!-- Dress Code -->
         <div class="card">
             <h2>Dress Code</h2>
 
@@ -73,7 +70,6 @@
             <span class="read-more-btn" onclick="toggleText(this)">Read More</span>
         </div>
 
-        <!-- Merchandise -->
         <div class="card">
             <h2>Merchandise</h2>
 
@@ -92,7 +88,6 @@
     </div>
 </div>
 
-<!-- Videos -->
 <h2 style="text-align: center; margin-top: 20px;">Festival Highlights</h2>
 
 <div class="video-gallery">
@@ -110,29 +105,19 @@
 <script>
     function toggleText(btn) {
         const moreText = btn.previousElementSibling;
-        if (moreText.style.display === "block") {
-            moreText.style.display = "none";
-            btn.textContent = "Read More";
-        } else {
-            moreText.style.display = "block";
-            btn.textContent = "Read Less";
-        }
+        const isVisible = moreText.styel.display === "block";
+        moreText.styel.display = isVisible ? "none" : "block";
+        btn.textcontent = isVisible ? "Read More" : "Read Less";
     }
 
-    function playExclusive(video) {
-        const videos = document.querySelectorAll('video');
-        videos.forEach(v => {
-            if (v !== video) {
-                v.pause();
-            }
-        });
+    function playExclusive(current) {
+        document.querySelectorAll("video").forEach(v => v !== current && v.pause());
     }
 </script>
 
 <footer class="footer-banner">
     <div class="footer-content">
        
-        <!-- Contacts Section -->
         <div class="footer-left">
             <h3>Connect With Us</h3>
             <p>Instagram, Discord, TikTok</p>
@@ -140,7 +125,6 @@
             <p>Phone: <a href="tel:+353899235677">0899235677</a></p>
         </div>
 
-        <!-- Sponsors section -->
         <dive class=""footer-right">
             <h3>Our Sponsors</h3>
             <p>Red Bull, EX-BoX, Microsoft, Rolex, Smurnoffs, Coca-Cola, RTE, Virgin Media, Intel, Mercedes</p>
