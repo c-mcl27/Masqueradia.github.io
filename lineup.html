@@ -90,7 +90,6 @@
       text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
     }
 	
-	Style.css
 	.festival-header {
   display: flex;
   justify-content: space-between;
@@ -101,23 +100,14 @@
   flex-wrap: wrap;
 }
 
-.logo-date h1 {
-  margin: 0;
-  font-size: 28px;
-  color: #e95460;
-}
-
-.logo-date p {
-  margin: 5px 0 0;
-  font-size: 14px;
-  color: #ccc;
+.nav-section {
+  flex: 1;
 }
 
 .nav-links {
   display: flex;
-  align-items: center;
   gap: 20px;
-  flex-wrap: wrap;
+  align-items: center;
 }
 
 .nav-links a {
@@ -130,6 +120,24 @@
   color: #e94560;
 }
 
+
+.logo-date {
+  text-align: ;
+}
+
+.logo-date h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #ffccff;
+}
+
+.logo-date p {
+  margin: 5px 0 0;
+  font-size: 16px;
+  color: #ccc;
+}
+  
+
 .ticket-btn {
   background-color: #e94560;
   color: white;
@@ -141,31 +149,29 @@
 }
 
 .ticket-btn:hover {
-  background-color: #ff5e78;
+  background-color: #e94560;
 }
-
-
 	
   </style>
 </head>
 
 <body>
-
   <header class="festival-header">
-    <div class="logo-date">
-      <h1>MASQUERADIA</h1>
-      <p>JUN 19,20 & 21 2026</p>
-    </div>
-
+  <div class="nav-section">
     <nav class="nav-links">
       <a href="#about">ABOUT</a>
       <a href="#lineup">LINEUP</a>
       <a href="#plan">LOCATION</a>
       <button class="tickets-btn">TICKETS</button>
     </nav>
-  </header>
+  </div>
 
-  <div class="title-bar"></div>
+  <div class="logo-date">
+    <h1>MASQUERADIA</h1>
+    <p>JUN 19, 20 & 21 2026</p>
+  </div>
+</header>
+
 
   <div class="search-container">
     <input 
@@ -297,8 +303,6 @@
       <img src="michael.jpg" alt="Michael Jackson">
       <div class="artist-name">Michael Jackson</div>
     </div>
-	
-	
 
   </div>
 
