@@ -104,10 +104,14 @@
 
 <script>
      function toggleText(btn) {
-        const card = btn.closest('.card');
-        const moreText = card.querySelector('.more-text');
-        const showing = moreText.classList.toggle('show');
-        btn.textcontent = isVisible ? "Read More" : "Read Less";
+        const moreText = btn.previousElementSibling;
+        if (moreText.style.display === "block") {
+            moreText.style.display = "none";
+            btn.textContent = "Read More";
+        } else {
+            moreText.style.display = "block";
+            btn.textContent = "Read Less";
+        }
     }
 
     function playExclusive(current) {
